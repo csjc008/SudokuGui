@@ -14,7 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwidget.cpp \
-    togglebutton.cpp
+    togglebutton.cpp \
+    util.cpp
 
 HEADERS  += mainwidget.h \
-    togglebutton.h
+    togglebutton.h \
+    util.h
+
+RESOURCES += \
+    resource.qrc
+
+DISTFILES += \
+    ToggleButton.txt \
+    Header.txt

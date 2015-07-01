@@ -1,7 +1,11 @@
 #include "togglebutton.h"
+#include <QFile>
+#include <QtGlobal>
+#include <QtDebug>
+#include "util.h"
 
 ToggleButton::ToggleButton(QWidget *parent):QPushButton(parent),x(0),y(0),val(0){
-
+    this->setStyleSheet(Util::getStringFromResource(":/style/ToggleButton.txt"));
 }
 
 void ToggleButton::setX(int _x){

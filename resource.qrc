@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/style">
+        <file>ToggleButton.txt</file>
+        <file>Header.txt</file>
+    </qresource>
+</RCC>
