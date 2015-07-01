@@ -13,6 +13,8 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwidget.cpp
+        mainwidget.cpp \
+    togglebutton.cpp
 
-HEADERS  += mainwidget.h
+HEADERS  += mainwidget.h \
+    togglebutton.h

@@ -2,6 +2,8 @@
 #define MAINWIDGET_H
 
 #include <QWidget>
+#include <QPushButton>
+#include "togglebutton.h"
 
 class MainWidget : public QWidget
 {
@@ -10,6 +12,9 @@ class MainWidget : public QWidget
 public:
     MainWidget(QWidget *parent = 0);
     ~MainWidget();
+
+private:
+    ToggleButton** btnGrid;
 };
 
 #endif // MAINWIDGET_H
