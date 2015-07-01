@@ -5,6 +5,7 @@
 
 class ToggleButton : public QPushButton
 {
+    Q_OBJECT
 public:
     ToggleButton(QWidget *parent = 0);
     void setX(int _x);

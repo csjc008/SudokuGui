@@ -8,10 +8,11 @@
 class MainWidget : public QWidget
 {
     Q_OBJECT
-
 public:
     MainWidget(QWidget *parent = 0);
     ~MainWidget();
+public slots:
+    void moveWindow(int x,int y);
 
 private:
     ToggleButton** btnGrid;

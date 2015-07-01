@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwidget.cpp \
     togglebutton.cpp \
-    util.cpp
+    util.cpp \
+    titlelabel.cpp
 
 HEADERS  += mainwidget.h \
     togglebutton.h \
-    util.h
+    util.h \
+    titlelabel.h
 
 RESOURCES += \
     resource.qrc

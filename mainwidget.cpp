@@ -4,11 +4,14 @@
 #include <QWidget>
 #include <QLabel>
 #include "util.h"
+#include "titlelabel.h"
+#include <QPoint>
+#include <QtDebug>
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
     QVBoxLayout* vLayout=new QVBoxLayout();
-    QLabel* tlHeader=new QLabel("Sudoku Solver");
-    tlHeader->setStyleSheet(Util::getStringFromResource(":/style/Header.txt"));
+    TitleLabel* tlHeader=new TitleLabel();
+    tlHeader->setText("Sudoku Solver");
     QGridLayout* btnGridLayout=new QGridLayout();
     btnGridLayout->setVerticalSpacing(4);
     btnGridLayout->setHorizontalSpacing(4);
@@ -28,8 +31,14 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
     vLayout->addLayout(btnGridLayout);
     setLayout(vLayout);
     setWindowFlags( Qt::FramelessWindowHint );
+    connect(tlHeader,&TitleLabel::dragged,this,&MainWidget::moveWindow);
 }
 
 MainWidget::~MainWidget(){
 
+}
+
+void MainWidget::moveWindow(int x, int y){
+    // qDebug()<<"moved: "<<x<<","<<y;
+    this->move(QPoint(x,y)+this->pos());
 }
