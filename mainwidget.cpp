@@ -3,10 +3,12 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QLabel>
+#include "util.h"
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
     QVBoxLayout* vLayout=new QVBoxLayout();
     QLabel* tlHeader=new QLabel("Sudoku Solver");
+    tlHeader->setStyleSheet(Util::getStringFromResource(":/style/Header.txt"));
     QGridLayout* btnGridLayout=new QGridLayout();
     btnGridLayout->setVerticalSpacing(4);
     btnGridLayout->setHorizontalSpacing(4);

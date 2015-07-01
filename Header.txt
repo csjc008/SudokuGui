@@ -1,3 +1,4 @@
-font-size: 16px;
+font-size: 26px;
 font-family: "Consolas";
 font-style: bold;
+padding-bottom: 12px;
