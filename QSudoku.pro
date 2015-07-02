@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = QSudoku
 TEMPLATE = app
 
+include(QtAwesome/QtAwesome.pri)
 
 SOURCES += main.cpp\
         mainwidget.cpp \
@@ -28,4 +29,5 @@ RESOURCES += \
 
 DISTFILES += \
     ToggleButton.txt \
-    Header.txt
+    Header.txt \
+    Times.txt

@@ -2,5 +2,6 @@
     <qresource prefix="/style">
         <file>ToggleButton.txt</file>
         <file>Header.txt</file>
+        <file>Times.txt</file>
     </qresource>
 </RCC>

@@ -6,6 +6,7 @@
 
 TitleLabel::TitleLabel(QWidget *parent):QLabel(parent){
     this->setStyleSheet(Util::getStringFromResource(":/style/Header.txt"));
+    // this->setCursor(Qt::OpenHandCursor);
 }
 
 void TitleLabel::mousePressEvent(QMouseEvent *event){

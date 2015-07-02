@@ -9,6 +9,10 @@
 #include <QtDebug>
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
+    QtAwesome* as = new QtAwesome();
+    as->initFontAwesome();
+    this->awesome=as;
+
     QVBoxLayout* vLayout=new QVBoxLayout();
     TitleLabel* tlHeader=new TitleLabel();
     tlHeader->setText("Sudoku Solver");
@@ -28,6 +32,13 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
         }
     }
     vLayout->addWidget(tlHeader);
+
+    QPushButton* btnTimes = new QPushButton( awesome->icon( fa::times ),"" );
+    // QPushButton* btnTimes = new QPushButton( QString( QChar(static_cast<int>(0xf00d)) ) );
+    // btnTimes->setFlat(true);
+    btnTimes->setStyleSheet(Util::getStringFromResource(":/style/Times.txt"));
+    vLayout->addWidget(btnTimes);
+
     vLayout->addLayout(btnGridLayout);
     setLayout(vLayout);
     setWindowFlags( Qt::FramelessWindowHint );
@@ -36,6 +47,10 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
 
 MainWidget::~MainWidget(){
 
+}
+
+void MainWidget::setAwesome(QtAwesome *_as){
+    this->awesome=_as;
 }
 
 void MainWidget::moveWindow(int x, int y){
