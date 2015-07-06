@@ -5,6 +5,7 @@
 #include <QtDebug>
 
 TitleLabel::TitleLabel(QWidget *parent):QLabel(parent){
+    this->setObjectName("Header");
     this->setStyleSheet(Util::getStringFromResource(":/style/Header.txt"));
     // this->setCursor(Qt::OpenHandCursor);
 }

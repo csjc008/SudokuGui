@@ -5,5 +5,7 @@
         <file>Times.txt</file>
         <file>ToggleButton1.txt</file>
         <file>ToggleButton2.txt</file>
+        <file>MainWidget.txt</file>
+        <file>BlueButton.txt</file>
     </qresource>
 </RCC>

@@ -32,4 +32,6 @@ DISTFILES += \
     Header.txt \
     Times.txt \
     ToggleButton1.txt \
-    ToggleButton2.txt
+    ToggleButton2.txt \
+    MainWidget.txt \
+    BlueButton.txt

@@ -13,12 +13,15 @@ public:
     MainWidget(QWidget *parent = 0);
     ~MainWidget();
     void setAwesome(QtAwesome* _as);
+    QPushButton *getQuitButton();
 public slots:
     void moveWindow(int x,int y);
-
+    void quitApp();
 private:
     ToggleButton** btnGrid;
     QtAwesome* awesome;
+    QPushButton* btnTimes;
+    QPushButton* btnSolve;
 };
 
 #endif // MAINWIDGET_H

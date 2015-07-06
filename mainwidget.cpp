@@ -9,8 +9,11 @@
 #include <QPoint>
 #include <QtDebug>
 #include <QSpacerItem>
+#include <QApplication>
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
+    this->setObjectName("MainWindow");
+    this->setStyleSheet(Util::getStringFromResource(":/style/MainWidget.txt"));
     QtAwesome* as = new QtAwesome();
     as->initFontAwesome();
     this->awesome=as;
@@ -51,19 +54,27 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
         }
     }
     // vLayout->addWidget(tlHeader);
-    QPushButton* btnTimes = new QPushButton( awesome->icon( fa::times ),"" );
+    btnTimes = new QPushButton( awesome->icon( fa::times ),"" );
+
     // QPushButton* btnTimes = new QPushButton( QString( QChar(static_cast<int>(0xf00d)) ) );
     // btnTimes->setFlat(true);
     btnTimes->setStyleSheet(Util::getStringFromResource(":/style/Times.txt"));
+    btnSolve=new QPushButton(awesome->icon(fa::beer),"Solve");
+    btnSolve->setStyleSheet(Util::getStringFromResource(":/style/BlueButton.txt"));
     hvLayout->addWidget(btnTimes);
     hvLayout->addStretch();
     headerLayout->addStretch();
     headerLayout->addLayout(hvLayout);
     vLayout->addLayout(headerLayout);
     vLayout->addLayout(btnGridLayout);
+    QHBoxLayout* tailLayout=new QHBoxLayout();
+    tailLayout->addStretch();
+    tailLayout->addWidget(btnSolve);
+    vLayout->addLayout(tailLayout);
     setLayout(vLayout);
     setWindowFlags( Qt::FramelessWindowHint );
     connect(tlHeader,&TitleLabel::dragged,this,&MainWidget::moveWindow);
+    connect(this->btnTimes,&QPushButton::clicked,this,&MainWidget::quitApp);
 }
 
 MainWidget::~MainWidget(){
@@ -73,7 +84,15 @@ void MainWidget::setAwesome(QtAwesome *_as){
     this->awesome=_as;
 }
 
+QPushButton *MainWidget::getQuitButton(){
+    return this->btnTimes;
+}
+
 void MainWidget::moveWindow(int x, int y){
     // qDebug()<<"moved: "<<x<<","<<y;
     this->move(QPoint(x,y)+this->pos());
+}
+
+void MainWidget::quitApp(){
+    QApplication::quit();
 }
