@@ -30,4 +30,6 @@ RESOURCES += \
 DISTFILES += \
     ToggleButton.txt \
     Header.txt \
-    Times.txt
+    Times.txt \
+    ToggleButton1.txt \
+    ToggleButton2.txt

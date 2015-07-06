@@ -1,0 +1,26 @@
+QPushButton{
+background: rgb(252,205,182);
+border: 1px solid rgb(245,186,157);
+font-size: 22px;
+font-family: "Consolas";
+font-style: bold;
+color: rgb(65,66,68);
+}
+
+QPushButton:hover{
+background: rgb(245,186,157);
+border: 1px solid rgb(240,98,62);
+font-size: 22px;
+font-family: "Consolas";
+font-style: bold;
+color: rgb(240,240,240);
+}
+
+QPushButton:checked{
+background: rgb(65,66,68);
+border: 1px solid rgb(65,66,68);
+font-size: 22px;
+font-family: "Consolas";
+font-style: bold;
+color: rgb(240,240,240);
+}

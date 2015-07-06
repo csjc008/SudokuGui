@@ -5,15 +5,24 @@
 #include "util.h"
 
 ToggleButton::ToggleButton(QWidget *parent):QPushButton(parent),x(0),y(0),val(0){
-    this->setStyleSheet(Util::getStringFromResource(":/style/ToggleButton.txt"));
 }
 
 void ToggleButton::setX(int _x){
     this->x=_x;
+    if((x+y)%2==1){
+        this->setStyleSheet(Util::getStringFromResource(":/style/ToggleButton1.txt"));
+    } else {
+       this->setStyleSheet(Util::getStringFromResource(":/style/ToggleButton2.txt"));
+    }
 }
 
 void ToggleButton::setY(int _y){
     this->y=_y;
+    if((x+y)%2==1){
+        this->setStyleSheet(Util::getStringFromResource(":/style/ToggleButton1.txt"));
+    } else {
+       this->setStyleSheet(Util::getStringFromResource(":/style/ToggleButton2.txt"));
+    }
 }
 
 int ToggleButton::getX(){

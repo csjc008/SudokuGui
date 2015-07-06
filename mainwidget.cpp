@@ -1,12 +1,14 @@
 #include "mainwidget.h"
 #include <QGridLayout>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QWidget>
 #include <QLabel>
 #include "util.h"
 #include "titlelabel.h"
 #include <QPoint>
 #include <QtDebug>
+#include <QSpacerItem>
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
     QtAwesome* as = new QtAwesome();
@@ -14,11 +16,23 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
     this->awesome=as;
 
     QVBoxLayout* vLayout=new QVBoxLayout();
+    QHBoxLayout* headerLayout=new QHBoxLayout();
+    QVBoxLayout* hvLayout=new QVBoxLayout();
     TitleLabel* tlHeader=new TitleLabel();
     tlHeader->setText("Sudoku Solver");
+    headerLayout->addWidget(tlHeader);
     QGridLayout* btnGridLayout=new QGridLayout();
-    btnGridLayout->setVerticalSpacing(4);
-    btnGridLayout->setHorizontalSpacing(4);
+    btnGridLayout->setVerticalSpacing(3);
+    btnGridLayout->setHorizontalSpacing(3);
+    QGridLayout*** btnSubLayout=new QGridLayout** [3];
+    for(int i=0;i<3;i++){
+        btnSubLayout[i]=new QGridLayout* [3];
+        for(int j=0;j<3;j++){
+            btnSubLayout[i][j]=new QGridLayout();
+            btnSubLayout[i][j]->setVerticalSpacing(1);
+            btnSubLayout[i][j]->setHorizontalSpacing(1);
+        }
+    }
     btnGrid=new ToggleButton* [9];
     for(int i=0;i<9;i++){
         btnGrid[i]=new ToggleButton[9];
@@ -28,17 +42,24 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
             btnGrid[i][j].setFixedSize(50,50);
             btnGrid[i][j].setX(i);
             btnGrid[i][j].setY(j);
-            btnGridLayout->addWidget(&btnGrid[i][j],i,j);
+            btnSubLayout[i/3][j/3]->addWidget(&btnGrid[i][j],i%3,j%3);
         }
     }
-    vLayout->addWidget(tlHeader);
-
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            btnGridLayout->addLayout(btnSubLayout[i][j],i,j);
+        }
+    }
+    // vLayout->addWidget(tlHeader);
     QPushButton* btnTimes = new QPushButton( awesome->icon( fa::times ),"" );
     // QPushButton* btnTimes = new QPushButton( QString( QChar(static_cast<int>(0xf00d)) ) );
     // btnTimes->setFlat(true);
     btnTimes->setStyleSheet(Util::getStringFromResource(":/style/Times.txt"));
-    vLayout->addWidget(btnTimes);
-
+    hvLayout->addWidget(btnTimes);
+    hvLayout->addStretch();
+    headerLayout->addStretch();
+    headerLayout->addLayout(hvLayout);
+    vLayout->addLayout(headerLayout);
     vLayout->addLayout(btnGridLayout);
     setLayout(vLayout);
     setWindowFlags( Qt::FramelessWindowHint );
@@ -46,7 +67,6 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent){
 }
 
 MainWidget::~MainWidget(){
-
 }
 
 void MainWidget::setAwesome(QtAwesome *_as){

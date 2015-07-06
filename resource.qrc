@@ -3,5 +3,7 @@
         <file>ToggleButton.txt</file>
         <file>Header.txt</file>
         <file>Times.txt</file>
+        <file>ToggleButton1.txt</file>
+        <file>ToggleButton2.txt</file>
     </qresource>
 </RCC>
