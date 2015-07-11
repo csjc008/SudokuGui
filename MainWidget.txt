@@ -1,3 +1,4 @@
-QWidget#MainWindow {
+#MainWindow {
   border: 1px solid rgb(65,66,68);
+  background: rgb(213,225,242);
 }

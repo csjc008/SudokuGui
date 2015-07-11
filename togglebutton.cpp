@@ -5,6 +5,7 @@
 #include "util.h"
 
 ToggleButton::ToggleButton(QWidget *parent):QPushButton(parent),x(0),y(0),val(0){
+    connect(this,&ToggleButton::pressed,this,&ToggleButton::coordPressed);
 }
 
 void ToggleButton::setX(int _x){
@@ -39,6 +40,17 @@ void ToggleButton::setVal(int _v){
 
 int ToggleButton::getVal(){
     return this->val;
+}
+
+void ToggleButton::keyPressEvent(QKeyEvent *e){
+    if(e->key()>=Qt::Key_0&&e->key()<=Qt::Key_9){
+        this->val=e->key()-Qt::Key_0;
+        this->setText(QString('0'+this->val));
+    }
+}
+
+void ToggleButton::coordPressed(){
+    emit pressedxy(this->x,this->y);
 }
 
 

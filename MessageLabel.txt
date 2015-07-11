@@ -1,0 +1,6 @@
+QLabel{
+font-size: 14px;
+font-family: "Consolas";
+font-style: normal;
+padding-left:2px;
+}

@@ -3,7 +3,7 @@ background: rgb(240,240,240);
 border: none;
 }
 
-QPushButton:pressed{
-background: rgb(240,240,240);
+QPushButton:hover{
+background: rgb(213,225,242);
 border: none;
 }

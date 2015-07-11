@@ -17,12 +17,20 @@ SOURCES += main.cpp\
         mainwidget.cpp \
     togglebutton.cpp \
     util.cpp \
-    titlelabel.cpp
+    titlelabel.cpp \
+    quadindex.cpp \
+    minibrickset.cpp \
+    brickset.cpp \
+    outterwidget.cpp
 
 HEADERS  += mainwidget.h \
     togglebutton.h \
     util.h \
-    titlelabel.h
+    titlelabel.h \
+    quadindex.h \
+    minibrickset.h \
+    brickset.h \
+    outterwidget.h
 
 RESOURCES += \
     resource.qrc
@@ -34,4 +42,5 @@ DISTFILES += \
     ToggleButton1.txt \
     ToggleButton2.txt \
     MainWidget.txt \
-    BlueButton.txt
+    BlueButton.txt \
+    MessageLabel.txt

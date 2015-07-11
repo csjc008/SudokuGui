@@ -2,5 +2,7 @@
   font-size: 26px;
   font-family: "Consolas";
   font-style: bold;
-  padding-bottom: 12px;
+  padding-bottom:8px;
+  padding-top:10px;
+  padding-left:2px;
 }

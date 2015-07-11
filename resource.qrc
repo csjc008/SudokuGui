@@ -7,5 +7,6 @@
         <file>ToggleButton2.txt</file>
         <file>MainWidget.txt</file>
         <file>BlueButton.txt</file>
+        <file>MessageLabel.txt</file>
     </qresource>
 </RCC>
