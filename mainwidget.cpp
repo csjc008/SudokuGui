@@ -87,7 +87,7 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent),curx(-1),cury(-1),done
     tailLayout->addWidget(btnSolve);
     vLayout->addLayout(tailLayout);
     setLayout(vLayout);
-    //setWindowFlags( Qt::FramelessWindowHint );
+    setWindowFlags( Qt::FramelessWindowHint );
     connect(tlHeader,&TitleLabel::dragged,this,&MainWidget::moveWindow);
     connect(this->btnTimes,&QPushButton::clicked,this,&MainWidget::quitApp);
     connect(this->btnSolve,&QPushButton::clicked,this,&MainWidget::solveSudoku);

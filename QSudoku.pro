@@ -20,8 +20,7 @@ SOURCES += main.cpp\
     titlelabel.cpp \
     quadindex.cpp \
     minibrickset.cpp \
-    brickset.cpp \
-    outterwidget.cpp
+    brickset.cpp
 
 HEADERS  += mainwidget.h \
     togglebutton.h \
@@ -29,8 +28,7 @@ HEADERS  += mainwidget.h \
     titlelabel.h \
     quadindex.h \
     minibrickset.h \
-    brickset.h \
-    outterwidget.h
+    brickset.h
 
 RESOURCES += \
     resource.qrc
